@@ -1,4 +1,95 @@
-* {
+body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style-type: none;
+    height: 1000vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 10px 10px 30px;
+    background-color: black;
+    color: white;
+}
+
+nav{
+    width: 100%;
+}
+
+a:after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.25s;
+}
+
+a:hover::after{
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 33%;
+    font-size: 12px;  
+    font-weight: 700;
+    list-style-type: none;
+}
+
+#carrossel {
+   position: relative;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100vh;
+   animation: animate 32s ease-in-out infinite;
+   background-size: cover;
+   background-attachment:fixed ;
+   background-position: center;
+}
+
+.other {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes animate {
+    0%,100% {
+        background-image: url(imagens/carrossel_1.jpeg);
+    }
+    25% {
+        background-image: url(imagens/carrossel_2.jpeg);
+    }
+    50% {
+        background-image: url(imagens/carrossel_3.jpeg);
+    }
+    75% {
+        background-image: url(imagens/carrossel_4.jpeg);
+    }
+   }
+
+.texto {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
 }
